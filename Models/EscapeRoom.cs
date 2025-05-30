@@ -1,6 +1,8 @@
 
+
+namespace Tp05.EscapeRoom.Models;
 using Newtonsoft.Json;
-public class EscapeRoom
+public class Escaperoom
 {
     [JsonProperty]
     public int nivel { private set; get; }
@@ -9,7 +11,7 @@ public class EscapeRoom
     [JsonProperty]
     public Dictionary<int, string> respuestas { private set; get; }
 
-    public EscapeRoom()
+    public Escaperoom()
     {
         nivel = 1;
         pistas = new Dictionary<int, string>();
