@@ -1,5 +1,7 @@
 using Newtonsoft.Json;
 
+namespace Tp05.EscapeRoom.Models;
+
 public static class Objeto
 {
     public static string ObjectToString<T>(T obj)
