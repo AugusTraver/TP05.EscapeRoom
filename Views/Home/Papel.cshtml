@@ -1,3 +1,14 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div class = "Papel">
+<p> “Sin tinta ni pluma te cuento quién soy,
+ mi cuerpo es papel, mi alma es doblar.
+ Dragones, grullas y flores me doy,
+ soy arte que juega sin nunca cortar.”
+</p>
+ <form action = '@Url.Action("CompararRespuesta","Home")' method = "post">     <!-- Ingresar Respuesta de la sala 1 en un Type Text  -->
+        <input type = "text" name = "texto">
+        <input type = "submit" value = "enviar">
+        </form>
+</div>

@@ -21,3 +21,14 @@ footer {
   background-color: #f8f9fa;
   border-top: 1px solid #e9ecef;
 }
+.Papel{
+  background-image: url('/Imagenes/Papel.jpg');
+}
+.Sala1{
+   background-image: url('/Imagenes/carcel.png');
+}
+input[type = "sumbit"]:disabled
+{
+cursor: not-allowed;
+
+}

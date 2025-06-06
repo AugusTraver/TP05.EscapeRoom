@@ -21,7 +21,7 @@ public class HomeController : Controller
     {
         Escaperoom EscapeRoom = new Escaperoom(NomUsu);
         HttpContext.Session.SetString("1", Objeto.ObjectToString(EscapeRoom));
-        return View();
+        return RedirectToAction("MandarNivel");
     }
     public IActionResult DTutorial()
     {
@@ -31,7 +31,7 @@ public class HomeController : Controller
     {
         return View("Contexto");
     }
-        public IActionResult DCreditos()
+    public IActionResult DCreditos()
     {
         return View("Creditos");
     }
@@ -72,6 +72,9 @@ public class HomeController : Controller
         ViewBag.Pista = EscapeRoom.DevolverPista();
         return RedirectToAction("Pista");
     }
-
+    public IActionResult DPapel()
+    {
+        return View("Papel");
+    }
 }
 
