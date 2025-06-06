@@ -1,8 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
-
 <div>
-    <h1>Index</h1>
-    <p>Bienvenidos al sitio web de NombreProyecto</p>
+    <h1>Bienvenidos al escape room de la banda del morgan</h1>
+    <img src="/Imagenes/MORGAN.jpg" alt = "Foto de la banda">
+    <h4>Aca ingresa tu nombre</h4> 
+    <form action = '@Url.Action("InicializarJuego","Home")' method = "post">     <!-- Ingresar Nombre En un Type Text  -->
+    <input type = "text" name = "texto">
+    </form>
+    <p><a href= '@Url.Action("DTutorial", "Home")'  > tutorial</p>  <!-- Boton que te envia al tutorial  -->
+    <p><a href= '@Url.Action("DContexto", "Home")'  > contexto</p>  <!-- Boton que te envia al Contexto  -->
+    <p><a href= '@Url.Action("DCreditos", "Home")'  > creditos</p>  <!-- Boton que te envia al Creditos  -->
 </div>

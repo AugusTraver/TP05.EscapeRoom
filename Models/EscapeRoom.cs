@@ -9,8 +9,10 @@ public class Escaperoom
     public Dictionary<int, string> pistas { private set; get; }
     [JsonProperty]
     public Dictionary<int, string> respuestas { private set; get; }
-    public Escaperoom()
+    public string NomUsu { private set; get; }
+    public Escaperoom(string PNomUsu)
     {
+        NomUsu = PNomUsu;
         nivel = 1;
         pistas = new Dictionary<int, string>();
         respuestas = new Dictionary<int, string>();

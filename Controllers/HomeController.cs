@@ -17,9 +17,9 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult InicializarJuego()
+    public IActionResult InicializarJuego(string NomUsu)
     {
-        Escaperoom EscapeRoom = new Escaperoom();
+        Escaperoom EscapeRoom = new Escaperoom(NomUsu);
         HttpContext.Session.SetString("1", Objeto.ObjectToString(EscapeRoom));
         return View();
     }
@@ -31,6 +31,11 @@ public class HomeController : Controller
     {
         return View("Contexto");
     }
+        public IActionResult DCreditos()
+    {
+        return View("Creditos");
+    }
+
     public IActionResult CompararRespuesta(string respuesta)
     {
         Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>((HttpContext.Session.GetString("1")));
@@ -67,6 +72,6 @@ public class HomeController : Controller
         ViewBag.Pista = EscapeRoom.DevolverPista();
         return RedirectToAction("Pista");
     }
-    
+
 }
 
