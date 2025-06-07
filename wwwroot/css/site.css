@@ -10,13 +10,13 @@ html {
 }
 
 body {
-  margin: 10px;
-  padding: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 
 footer {
-  margin-top: 10px;
+  margin-top: 30px;
   padding: 10px;
   background-color: #f8f9fa;
   border-top: 1px solid #e9ecef;
@@ -24,11 +24,27 @@ footer {
 .Papel{
   background-image: url('/Imagenes/Papel.jpg');
 }
-.Sala1{
-   background-image: url('/Imagenes/carcel.png');
+.Sala1 {
+    background-image: url('/Imagenes/carcel.png');
+    background-size: cover;         /* Hace que la imagen cubra todo el fondo */
+    background-position: center;    /* Centra la imagen */
+    background-repeat: no-repeat;   /* Evita que la imagen se repita */
+    min-height: 100vh;              /* Ocupa al menos toda la altura de la ventana */
+    width: 100vw;                   /* Ocupa todo el ancho de la ventana */
+    margin: 0;                      /* Elimina márgenes */
+    padding: 0;                     /* Elimina padding */
 }
-input[type = "sumbit"]:disabled
-{
-cursor: not-allowed;
-
+.form-ala1 {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    height: 100vh;           /* Ocupa toda la altura del contenedor */
+}
+.form-sala1 {
+   pointer-events: auto;
+    position: absolute;
+    top: 225px;
+    right: 440px;
+    margin: 0;
+     opacity: 0;
 }

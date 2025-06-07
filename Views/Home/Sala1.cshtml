@@ -1,9 +1,10 @@
 @{
     ViewData["Title"] = "Index";
+    
 }
- <div class = "Sala1">
 
- <form action = '@Url.Action("DPapel","Home")' method = "post">  
- <input type = "submit" value ="enviar" disabled>
-</form>
+<div class="Sala1" style="min-height:100vh;">
+   <form class="form-sala1" action='@Url.Action("DPapel","Home")' method="post">  
+        <input type="submit" value="enviar" >
+    </form>
 </div>

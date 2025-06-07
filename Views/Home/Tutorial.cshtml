@@ -1,6 +1,10 @@
 @{
     ViewData["Title"] = "Index";
-} 
+}
+<header>
+    La banda del morgan
+     <nav> <a  href = '@Url.Action("Index","Home")'>Volver al inicio</a> </nav>
+</header> 
 <p>🔐 Tutorial – Cómo jugar el escape room virtual "Prison Break"
 <br>
 ¡Bienvenido a Fox River! Estás por entrar a un escape room virtual inspirado en Prison Break, donde tu objetivo es claro: escapar de la prisión antes de que sea demasiado tarde.
@@ -28,3 +32,6 @@ El juego tiene un sistema de pistas por si te bloqueás. Úsalas si sentís que 
 ¿Estás listo para escapar?<br>
 La celda ya no es tu cárcel... es tu única salida.
 </p>
+<footer>
+    &copy; @DateTime.Now.Year - La banda del morgan
+</footer>

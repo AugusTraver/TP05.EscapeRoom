@@ -20,7 +20,7 @@ public class HomeController : Controller
     public IActionResult InicializarJuego(string NomUsu)
     {
         Escaperoom EscapeRoom = new Escaperoom(NomUsu);
-        HttpContext.Session.SetString("1", Objeto.ObjectToString(EscapeRoom));
+        HttpContext.Session.SetString("EscapeRoom", Objeto.ObjectToString(EscapeRoom));
         return RedirectToAction("MandarNivel");
     }
     public IActionResult DTutorial()
@@ -38,14 +38,14 @@ public class HomeController : Controller
 
     public IActionResult CompararRespuesta(string respuesta)
     {
-        Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>((HttpContext.Session.GetString("1")));
+        Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
         bool Resultado = EscapeRoom.CompararRespuesta(respuesta);
-        HttpContext.Session.SetString("2", Objeto.ObjectToString(EscapeRoom));
+        HttpContext.Session.SetString("EscapeRoom", Objeto.ObjectToString(EscapeRoom));
         return RedirectToAction("MandarNivel");
     }
     public IActionResult MandarNivel()
     {
-        Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>((HttpContext.Session.GetString("2")));
+        Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
         string Nivel = "Sala1";
         if (EscapeRoom.nivel == 2)
         {
@@ -63,12 +63,11 @@ public class HomeController : Controller
         {
             Nivel = "Sala5";
         }
-        HttpContext.Session.SetString("3", Objeto.ObjectToString(EscapeRoom));
         return View(Nivel);
     }
     public IActionResult DevolverPista()
     {
-        Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>((HttpContext.Session.GetString("3")));
+        Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
         ViewBag.Pista = EscapeRoom.DevolverPista();
         return RedirectToAction("Pista");
     }
