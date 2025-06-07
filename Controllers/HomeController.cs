@@ -65,13 +65,14 @@ public class HomeController : Controller
         }
         return View(Nivel);
     }
+    
     public IActionResult DevolverPista()
     {
         Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
         ViewBag.Pista = EscapeRoom.DevolverPista();
         return RedirectToAction("Pista");
     }
-    public IActionResult DPapel()
+public IActionResult DPapel()
     {
         return View("Papel");
     }

@@ -48,17 +48,26 @@ footer {
     margin: 0;                      /* Elimina márgenes */
     padding: 0;                     /* Elimina padding */
 }
-.form-ala1 {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;     /* Centra verticalmente */
-    height: 100vh;           /* Ocupa toda la altura del contenedor */
-}
 .form-sala1 {
-   pointer-events: auto;
     position: absolute;
-    top: 225px;
-    right: 440px;
+    top: 193px;
+    right: 400px;
     margin: 0;
-     opacity: 0;
+}
+
+.form-sala1 input[type="submit"] {
+    opacity: 0; /* Invisible */
+    pointer-events: auto;
+    width: 40px;
+    height: 30px;
+    border: none;
+    background: #222;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+        cursor: default;
+
 }
