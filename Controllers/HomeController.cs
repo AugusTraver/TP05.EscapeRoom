@@ -35,37 +35,36 @@ public class HomeController : Controller
     {
         return View("Creditos");
     }
+public IActionResult CompararRespuesta(string respuesta)
+{
+    Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
+    bool Resultado = EscapeRoom.CompararRespuesta(respuesta.ToUpper());
+    HttpContext.Session.SetString("EscapeRoom", Objeto.ObjectToString(EscapeRoom));
+    return RedirectToAction("MandarNivel");
+}
 
-    public IActionResult CompararRespuesta(string respuesta)
+public IActionResult MandarNivel()
+{
+    Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
+    string Nivel = "Sala1";
+    if (EscapeRoom.nivel == 2)
     {
-        Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
-        bool Resultado = EscapeRoom.CompararRespuesta(respuesta);
-        HttpContext.Session.SetString("EscapeRoom", Objeto.ObjectToString(EscapeRoom));
-        return RedirectToAction("MandarNivel");
+        Nivel = "Sala2";
     }
-    public IActionResult MandarNivel()
+    else if (EscapeRoom.nivel == 3)
     {
-        Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
-        string Nivel = "Sala1";
-        if (EscapeRoom.nivel == 2)
-        {
-            Nivel = "Sala2";
-        }
-        else if (EscapeRoom.nivel == 3)
-        {
-            Nivel = "Sala3";
-        }
-        else if (EscapeRoom.nivel == 4)
-        {
-            Nivel = "Sala4";
-        }
-        else if (EscapeRoom.nivel == 5)
-        {
-            Nivel = "Sala5";
-        }
-        return View(Nivel);
+        Nivel = "Sala3";
     }
-    
+    else if (EscapeRoom.nivel == 4)
+    {
+        Nivel = "Sala4";
+    }
+    else if (EscapeRoom.nivel == 5)
+    {
+        Nivel = "Sala5";
+    }
+    return View(Nivel);
+}
     public IActionResult DevolverPista()
     {
         Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));

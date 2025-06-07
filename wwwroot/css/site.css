@@ -47,12 +47,14 @@ footer {
     width: 100vw;                   /* Ocupa todo el ancho de la ventana */
     margin: 0;                      /* Elimina márgenes */
     padding: 0;                     /* Elimina padding */
+    
 }
 .form-sala1 {
-    position: absolute;
-    top: 193px;
-    right: 400px;
+    position: fixed;
+    top: 220px;    /* Ajustá este valor según donde lo quieras */
+    right: 440px;  /* Ajustá este valor según donde lo quieras */
     margin: 0;
+    z-index: 10;
 }
 
 .form-sala1 input[type="submit"] {
