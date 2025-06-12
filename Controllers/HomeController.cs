@@ -38,11 +38,10 @@ public class HomeController : Controller
 public IActionResult CompararRespuesta(string respuesta)
 {
     Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
-    bool Resultado = EscapeRoom.CompararRespuesta(respuesta.ToUpper());
+    EscapeRoom.CompararRespuesta(respuesta.ToUpper());
     HttpContext.Session.SetString("EscapeRoom", Objeto.ObjectToString(EscapeRoom));
     return RedirectToAction("MandarNivel");
 }
-
 public IActionResult MandarNivel()
 {
     Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));

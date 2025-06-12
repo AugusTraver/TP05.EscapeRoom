@@ -22,20 +22,17 @@ public class Escaperoom
         pistas.Add(4, "Fijate en el locer 7 y en el video cuando dice aguas...");
         pistas.Add(5, "Para sacar la calle mira la carta y para sacar el numero mira el plano");
         respuestas.Add(1, "ORIGAMI");
-        respuestas.Add(2, "CHRISTINARose");
+        respuestas.Add(2, "CHRISTINAROSE");
         respuestas.Add(3, "210110");
         respuestas.Add(4, "AGUAS TERMALES");
         respuestas.Add(5, "FOX RIVER ROAD 42");
     }
-    public bool CompararRespuesta(string RespuestaUsuario)
+    public void CompararRespuesta(string RespuestaUsuario)
     {
-        bool Resultado = false;
         if (RespuestaUsuario == respuestas[nivel])
         {
-            Resultado = true;
             nivel++;
         }
-        return Resultado;
     }
     public string DevolverPista()
     {
