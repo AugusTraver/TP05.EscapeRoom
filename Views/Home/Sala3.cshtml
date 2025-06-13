@@ -1,18 +1,22 @@
 @{
     ViewData["Title"] = "Index";
 }
-<div class="Sala3">
-
 <div class="Sala3-video-fondo">
   <iframe
-    src="https://www.youtube.com/embed/JJ3KfKRDmyc?autoplay=1&mute=1&controls=0&loop=1&playlist=JJ3KfKRDmyc&modestbranding=1&showinfo=0&rel=0"
+    src="https://www.youtube.com/embed/JJ3KfKRDmyc?autoplay=1&mute=1&controls=0&loop=1&playlist=JJ3KfKRDmyc"
     frameborder="0"
     allow="autoplay; encrypted-media"
     allowfullscreen
     title="YouTube video de fondo"
   ></iframe>
 </div>
-    <form class="Pista" action='@Url.Action("DevolverPista", "Home")' method="post">
-        <button type="submit">Pista</button>
-    </form>
+
+<div class="Sala3-contenido">
+  <form class="Pista" action='@Url.Action("DevolverPista", "Home")' method="post">
+    <button type="submit">Pista</button>
+  </form>
+<form action='@Url.Action("CompararRespuesta","Home")' method="post">
+    <input type="text" name="respuesta" placeholder="Tu respuesta">
+    <input type="submit" value="Enviar">
+</form>
 </div>
