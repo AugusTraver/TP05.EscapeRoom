@@ -2,5 +2,11 @@
     ViewData["Title"] = "Index";
 }
 <div class = "Sala2">
-    <p>¡Bienvenido a la Sala 2!</p>
+    <form class="Pista" action='@Url.Action("DevolverPista","Home")' method="post">
+    <button type="submit">Pista</button>
+</form>
+<form action='@Url.Action("CompararRespuesta","Home")' method="post">
+    <input type="text" name="respuesta" placeholder="Tu respuesta">
+    <input type="submit" value="Enviar">
+</form>
 </div>

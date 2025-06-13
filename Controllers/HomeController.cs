@@ -35,42 +35,42 @@ public class HomeController : Controller
     {
         return View("Creditos");
     }
-public IActionResult CompararRespuesta(string respuesta)
-{
-    Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
-    EscapeRoom.CompararRespuesta(respuesta.ToUpper());
-    HttpContext.Session.SetString("EscapeRoom", Objeto.ObjectToString(EscapeRoom));
-    return RedirectToAction("MandarNivel");
-}
-public IActionResult MandarNivel()
-{
-    Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
-    string Nivel = "Sala1";
-    if (EscapeRoom.nivel == 2)
+    public IActionResult CompararRespuesta(string respuesta)
     {
-        Nivel = "Sala2";
+        Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
+        EscapeRoom.CompararRespuesta(respuesta.ToUpper().Replace(" ", ""));
+        HttpContext.Session.SetString("EscapeRoom", Objeto.ObjectToString(EscapeRoom));
+        return RedirectToAction("MandarNivel");
     }
-    else if (EscapeRoom.nivel == 3)
+    public IActionResult MandarNivel()
     {
-        Nivel = "Sala3";
+        Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
+        string Nivel = "Sala1";
+        if (EscapeRoom.nivel == 2)
+        {
+            Nivel = "Sala2";
+        }
+        else if (EscapeRoom.nivel == 3)
+        {
+            Nivel = "Sala3";
+        }
+        else if (EscapeRoom.nivel == 4)
+        {
+            Nivel = "Sala4";
+        }
+        else if (EscapeRoom.nivel == 5)
+        {
+            Nivel = "Sala5";
+        }
+        return View(Nivel);
     }
-    else if (EscapeRoom.nivel == 4)
-    {
-        Nivel = "Sala4";
-    }
-    else if (EscapeRoom.nivel == 5)
-    {
-        Nivel = "Sala5";
-    }
-    return View(Nivel);
-}
     public IActionResult DevolverPista()
     {
         Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
         ViewBag.Pista = EscapeRoom.DevolverPista();
-        return RedirectToAction("Pista");
+        return View("Pista");
     }
-public IActionResult DPapel()
+    public IActionResult DPapel()
     {
         return View("Papel");
     }

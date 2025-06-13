@@ -16,7 +16,7 @@ public class Escaperoom
         nivel = 1;
         pistas = new Dictionary<int, string>();
         respuestas = new Dictionary<int, string>();
-        pistas.Add(1, "Fijate en la gruya");
+        pistas.Add(1, "Fijate en la grulla");
         pistas.Add(2, "Mira el nombre del barco");
         pistas.Add(3, "Toca la lampara");
         pistas.Add(4, "Fijate en el locer 7 y en el video cuando dice aguas...");

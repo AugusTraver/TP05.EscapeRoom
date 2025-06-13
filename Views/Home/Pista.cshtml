@@ -1,0 +1,7 @@
+@{
+    ViewData["Title"] = "Index";
+}
+<p>@ViewBag.Pista</p>
+ <form class="VolverSala" action='@Url.Action("MandarNivel","Home")' method="post">  
+        <input type="submit" value="Volver a la sala" >
+    </form>
