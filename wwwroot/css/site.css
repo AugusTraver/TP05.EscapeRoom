@@ -1,6 +1,7 @@
 html {
   font-size: 14px;
   min-height: 100%;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -329,23 +330,65 @@ body {
     border-radius: 0 0 12px 12px;
 }
 .Papel {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;   /* Centra verticalmente */
-    align-items: center;       /* Centra horizontalmente */
-    color: #000000;               /* Cambia a #222 si tu fondo es claro */
-    text-shadow: 2px 2px 8px #000; /* Sombra para mejor contraste */
-    min-height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    background-image: url('/Imagenes/Papel.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-     font-size: 1.34rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-image: url('/Imagenes/Papel.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 1.34rem;
 }
 
+.Papel form[action*="CompararRespuesta"] {
+  background: #f1eee7cc;
+  padding: 10px 50px;
+  border-radius: 160px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  z-index: 2;
+  box-shadow: 0 4px 24px #2222;
+}
+
+.Papel input[type="text"] {
+  padding: 10px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: 1.5px solid #000000;
+  font-size: 1.1rem;
+  background: #f5faff;
+  color: #000000;
+  width: 220px;
+}
+
+.Papel input[type="text"]:focus {
+  border: 1.5px solid #64b5f6;
+}
+
+.Papel input[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 19px;
+  border: 2px solid #000000;
+  background: #f5faff;
+  color: #000000;
+  cursor: pointer;
+  font-size: 1.08rem;
+  font-weight: bold;
+  box-shadow: none;
+}
+
+.Papel input[type="submit"]:hover {
+  background: #e3f2fd;
+  color: #000000;
+  border: 2px solid #1565c0;
+}
 .Sala1 {
     background-image: url('/Imagenes/carcel.png');
     background-size: cover;         /* Hace que la imagen cubra todo el fondo */
@@ -355,6 +398,23 @@ body {
     width: 100vw;                   /* Ocupa todo el ancho de la ventana */
     margin: 0;                      /* Elimina márgenes */
     padding: 0;                     /* Elimina padding */   
+}
+.Sala1 .Pista {
+  position: absolute;
+  top: 32px;
+  right: 48px;
+  z-index: 2;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 14px 6px rgba(0,0,0,0.13);
+}
+.Sala1 .Pista:hover {
+  background: #868686;
+  color: #000000;
 }
 .form-sala1 {
     position: fixed;
@@ -395,18 +455,17 @@ body {
   top: 32px;
   right: 48px;
   z-index: 2;
-  background: #f8f8f8;
-  color: #000000;
-  border-radius: 8px;
-  padding: 0 10px;
-  font-size: 1.1rem;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-size: 1.3rem;
   font-weight: bold;
   cursor: pointer;
-  }
-
+  box-shadow: 0 14px 6px rgba(0,0,0,0.13);
+}
 .Sala2 .Pista:hover {
-  background: #485b68;
-  color: #1565c0;
+  background: #868686;
+  color: #000000;
 }
 .Sala2 form[action*="CompararRespuesta"] {
   position: absolute;
@@ -447,31 +506,6 @@ body {
   color: #1565c0;
   border: 2px solid #1565c0;
 }
-.Pista {
-  display: inline-block;
-  padding: 0 16px;
-  line-height: 2;
-  font-size: 1rem;
-  font-family: 'Segoe UI', 'Arial', sans-serif;
-  font-weight: bold;
-  color: #444;
-  background: #fff;
-  border-radius: 6px;
-  cursor: pointer;
-  float: right;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
-}
-.Pista:focus {
-  background: #f5f5f5;
-  color: #222;
-  outline: none;
-}
-
-.Pista:active {
-  background: #ececec;
-  color: #000;
-}
 .Sala3-video-fondo {
   position: fixed;
   top: 0;
@@ -493,7 +527,7 @@ body {
   z-index: 1;
   color: #fff;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 0%;
   min-height: 100vh;
 }
 
@@ -502,26 +536,25 @@ body {
   top: 32px;
   right: 48px;
   z-index: 2;
-  background: #f8f8f8;
-  color: #000000;
-  border-radius: 8px;
-  padding: 0 10px;
-  font-size: 1.1rem;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-size: 1.3rem;
   font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 14px 6px rgba(0,0,0,0.13);
 }
-
 .Sala3-contenido .Pista:hover {
-  background: #485b68;
-  color: #1565c0;
+  background: #868686;
+  color: #000000;
 }
 
 .Sala3-contenido form[action*="CompararRespuesta"] {
   position: absolute;
-  bottom: 20px;
-  right: 40px;
+  bottom: 10px;
+  right: 10px;
   background: #262523cc;
-  padding: 28px 50px;
+  padding: 21px 50px;
   border-radius: 160px;
   flex-direction: column;
   margin-top: 0;
@@ -558,7 +591,7 @@ body {
   color: #1565c0;
   border: 2px solid #1565c0;
 }
-.Lockers {
+.Sala4 {
   background-image: url('/Imagenes/lockers.jpg');
   background-size: cover;         
   background-position: center;   
@@ -567,4 +600,174 @@ body {
   width: 100%;                   
   margin: 0;                     
   padding: 0;                     
+}
+.form-sala4 {
+    position: fixed;
+    top: 0%;    /* Ajustá este valor según donde lo quieras */
+    right: 45.4%;  
+    margin: 0;
+    z-index: 10;
+}
+
+.form-sala4 input[type="submit"] {
+  opacity: 0; 
+    pointer-events: auto;
+    width: 210%;
+    height: 395px;
+    background: #222;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    cursor: default;
+}
+.Sala4-audio-container {
+  position: absolute;
+  top: 32px;           
+  right: 48px;      
+  background:#8bb4cb;
+  padding: 14px 22px;
+  border-radius: 50px;
+  box-shadow: 0 2px 12px #2223;
+  z-index: 10;
+  display: flex;
+}
+
+.Lockers {
+  background-image: url('/Imagenes/lockerAdentro.png');
+  background-size: cover;              /* Siempre cubre toda la pantalla */
+  background-position: center 20%;     /* Bajá la imagen, ajustá el % a gusto */
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.Lockers .Pista:hover {
+  background: #485b68;
+  color: #1565c0;
+}
+
+.Lockers form[action*="CompararRespuesta"] {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #262523cc;
+  padding: 10px 50px;
+  border-radius: 160px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  z-index: 2;
+}
+
+.Lockers input[type="text"] {
+  padding: 10px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: 1.5px solid #1976d2;
+  font-size: 1.1rem;
+  background: #f5faff;
+  color: #222;
+  width: 220px;
+}
+
+.Lockers input[type="text"]:focus {
+  border: 1.5px solid #64b5f6;
+}
+
+.Lockers input[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 19px;
+  border: 2px solid #1976d2;
+  background: #f5faff;
+  color: #1976d2;
+  cursor: pointer;
+  font-size: 1.08rem;
+  font-weight: bold;
+}
+
+.Lockers input[type="submit"]:hover {
+  background: #e3f2fd;
+  color: #1565c0;
+  border: 2px solid #1565c0;
+}
+.Lockers .Pista {
+  position: absolute;
+  top: 32px;
+  right: 48px;
+  z-index: 2;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 14px 6px rgba(0,0,0,0.13);
+}
+.Lockers .Pista:hover {
+  background: #868686;
+  color: #000000;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: url('/Imagenes/mugshotFondo.webp') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.Pistas {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.pista-texto {
+  position: absolute;
+  top: 450px;   
+  left: 770px;
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px #000;
+  z-index: 2;
+  width: 260px; 
+}
+
+.pista-imagen {
+  position: absolute;
+  top: 90px;   /* Cambia estos valores para mover la imagen */
+  left: 650px;
+  width: 500px; /* Cambia el tamaño si querés */
+  border-radius: 10px;
+  z-index: 1;
+}
+.VolverSala {
+  position: absolute;
+  bottom: 40px;
+  left: 80px;
+  z-index: 3;
+}
+
+.VolverSala input[type="submit"] {
+  background: #222831;
+  color: #ffd369;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.VolverSala input[type="submit"]:hover,
+.VolverSala input[type="submit"]:focus {
+  background: #393e46;
+  color: #fff;
+  outline: none;
 }

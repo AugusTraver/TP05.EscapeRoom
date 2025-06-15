@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Index";
+}
+<div class = "Lockers">
+<form action='@Url.Action("CompararRespuesta","Home")' method="post">
+    <input type="text" name="respuesta" placeholder="Tu respuesta">
+    <input type="submit" value="Enviar">
+</form>
+   <form class="Pista" action='@Url.Action("DevolverPista","Home")' method="post">
+    <button type="submit">Pista</button>
+</form>
+</div>

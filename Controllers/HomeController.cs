@@ -74,5 +74,9 @@ public class HomeController : Controller
     {
         return View("Papel");
     }
+    public IActionResult DLockers()
+    {
+        return View("Lockers");
+    }
 }
 
