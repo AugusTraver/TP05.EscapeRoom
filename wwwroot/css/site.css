@@ -12,6 +12,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+ 
 }
 .index {
     background: linear-gradient(135deg, #232526 0%, #414345 100%);
@@ -63,7 +65,7 @@ body {
 }
 
 .index input[type="text"] {
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 14px;
     border-radius: 6px;
     border: 1.5px solid #1976d2;
@@ -89,7 +91,6 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     box-shadow: 0 2px 8px #1976d233;
-    transition: background 0.2s, box-shadow 0.2s;
 }
 
 .index input[type="submit"]:hover {
@@ -111,10 +112,9 @@ body {
     color: #90caf9;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.15rem;
+    font-size: 2.15rem;
     padding: 6px 14px;
     border-radius: 4px;
-    transition: background 0.2s, color 0.2s;
 }
 
 .index div a:hover {
@@ -124,19 +124,19 @@ body {
 }
 
 .index footer {
-    margin-top: 48px;
+  margin-top: 7.2%;
     padding: 18px;
     background: #222b;
     border-top: 1.5px solid #1976d2;
     text-align: center;
     color: #b3c6e7;
     font-size: 1.05rem;
-    letter-spacing: 1px;
+    letter-spacing: 8px;
     border-radius: 0 0 12px 12px;
 }
 .creditos {
     background: linear-gradient(135deg, #232526 0%, #414345 100%);
-    min-height: 100vh;
+    min-height: 100 vh;
     font-family: 'Segoe UI', Arial, sans-serif;
     padding: 0;
     margin: 0;
@@ -165,7 +165,6 @@ body {
     text-decoration: none;
     font-size: 1.05rem;
     font-weight: bold;
-    transition: background 0.2s, color 0.2s;
 }
 
 .creditos header nav a:hover {
@@ -175,7 +174,7 @@ body {
 
 .creditos img {
     display: block;
-    margin: 36px auto 8px auto;
+    margin: 26px auto 8px auto;
     max-width: 160px;
     border-radius: 50%;
     box-shadow: 0 4px 16px #1976d233;
@@ -196,7 +195,7 @@ body {
 }
 
 .creditos footer {
-    margin-top: 48px;
+    margin-top: 75px;
     padding: 18px;
     background: #222b;
     border-top: 1.5px solid #1976d2;
@@ -239,7 +238,6 @@ body {
     text-decoration: none;
     font-size: 1.05rem;
     font-weight: bold;
-    transition: background 0.2s, color 0.2s;
 }
 
 .contexto header nav a:hover {
@@ -249,15 +247,14 @@ body {
 
 .contexto img {
     display: block;
-    margin: 36px auto 24px auto;
-    max-width: 600px;
+    margin: 50px auto 24px auto;
+    max-width: 1140px;
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
     border: 8px solid #1976d2;
 }
 
 .contexto footer {
-    margin-top: 48px;
     padding: 18px;
     background: #222b;
     border-top: 1.5px solid #1976d2;
@@ -299,7 +296,6 @@ body {
     text-decoration: none;
     font-size: 1.05rem;
     font-weight: bold;
-    transition: background 0.2s, color 0.2s;
 }
 
 .tutorial header nav a:hover {
@@ -310,7 +306,7 @@ body {
 .tutorial img {
     display: block;
     margin: 36px auto 24px auto;
-    max-width: 618px;       
+    max-width: 1175px;       
     width: 90vw;            
     border-radius: 12px;      
     box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
@@ -319,7 +315,6 @@ body {
 }
 
 .tutorial footer {
-    margin-top: 48px;
     padding: 18px;
     background: #222b;
     border-top: 1.5px solid #1976d2;
@@ -592,9 +587,9 @@ body {
   border: 2px solid #1565c0;
 }
 .Sala4 {
-  background-image: url('/Imagenes/lockers.jpg');
+  background-image: url('/Imagenes/lockers.png');
   background-size: cover;         
-  background-position: center;   
+  background-position: bottom;   
   background-repeat: no-repeat;  
   min-height: 100vh;            
   width: 100%;                   
@@ -603,8 +598,8 @@ body {
 }
 .form-sala4 {
     position: fixed;
-    top: 0%;    /* Ajustá este valor según donde lo quieras */
-    right: 45.4%;  
+    right: 81.5%; 
+    top: 35%; 
     margin: 0;
     z-index: 10;
 }
@@ -612,8 +607,8 @@ body {
 .form-sala4 input[type="submit"] {
   opacity: 0; 
     pointer-events: auto;
-    width: 210%;
-    height: 395px;
+    width: 285%;
+    height: 340px;
     background: #222;
     color: #fff;
     border-radius: 5px;
@@ -624,9 +619,10 @@ body {
     cursor: default;
 }
 .Sala4-audio-container {
+  width: 10%;
   position: absolute;
   top: 32px;           
-  right: 48px;      
+  right: 38px;      
   background:#8bb4cb;
   padding: 14px 22px;
   border-radius: 50px;
@@ -713,23 +709,19 @@ body {
   background: #868686;
   color: #000000;
 }
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background: url('/Imagenes/mugshotFondo.webp') no-repeat center center fixed;
-  background-size: cover;
-}
+
 
 .Pistas {
   width: 100vw;
   height: 100vh;
   position: relative;
+  background: url('/Imagenes/mugshotFondo.webp') no-repeat center center fixed;
+  background-size: cover;
 }
 
 .pista-texto {
   position: absolute;
-  top: 450px;   
+  top: 560px;   
   left: 770px;
   color: #000000;
   font-size: 1.5rem;
@@ -741,7 +733,7 @@ body {
 
 .pista-imagen {
   position: absolute;
-  top: 90px;   /* Cambia estos valores para mover la imagen */
+  top: 210px;   /* Cambia estos valores para mover la imagen */
   left: 650px;
   width: 500px; /* Cambia el tamaño si querés */
   border-radius: 10px;
