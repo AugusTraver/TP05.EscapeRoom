@@ -1,26 +1,24 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
-<div class=" index">
+<div class="index">
     <header>
-        <h1>La banda del morgan</h1>
- 
-<section>
-    <h1>Bienvenidos al escape room de la banda del morgan</h1>
-    <img src="/Imagenes/MORGAN.jpg" alt = "Foto de la banda">
-    <h4>Aca ingresa tu nombre</h4> 
-    <form action = '@Url.Action("InicializarJuego","Home")' method = "post">     <!-- Ingresar Nombre En un Type Text  -->
-        <input type = "text" name = "texto">
-        <input type = "submit" name = "enviar">
-    </form>
-</section>
-<div>
-    <p><a href= '@Url.Action("DTutorial", "Home")'  > tutorial</p>  <!-- Boton que te envia al tutorial  -->
-    <p><a href= '@Url.Action("DContexto", "Home")'  > contexto</p>  <!-- Boton que te envia al Contexto  -->
-    <p><a href= '@Url.Action("DCreditos", "Home")'  > creditos</p>  <!-- Boton que te envia al Creditos  -->
-   
-</div>
-<footer>
-    &copy; @DateTime.Now.Year - La banda del morgan
-</footer>
+ <h1>Bienvenidos al escape room de la banda del morgan</h1>    </header>
+    <section>
+       
+        <img src="/Imagenes/MORGAN.jpg" alt="Foto de la banda">
+        <h4>Aca ingresa tu nombre</h4>
+        <form action='@Url.Action("InicializarJuego","Home")' method="post">
+            <input type="text" name="texto">
+            <input type="submit" name="enviar" value="Enviar">
+        </form>
+    </section>
+    <div class="botones-links">
+        <a href='@Url.Action("DTutorial", "Home")'>tutorial</a>
+        <a href='@Url.Action("DContexto", "Home")'>contexto</a>
+        <a href='@Url.Action("DCreditos", "Home")'>creditos</a>
+    </div>
+    <footer>
+        &copy; @DateTime.Now.Year - La banda del morgan
+    </footer>
 </div>
