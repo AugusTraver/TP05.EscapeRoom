@@ -37,6 +37,9 @@ public class HomeController : Controller
     }
     public IActionResult CompararRespuesta(string respuesta)
     {
+         if (string.IsNullOrWhiteSpace(respuesta))
+        return RedirectToAction("MandarNivel");
+
         Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
         EscapeRoom.CompararRespuesta(respuesta.ToUpper().Replace(" ", ""));
         HttpContext.Session.SetString("EscapeRoom", Objeto.ObjectToString(EscapeRoom));

@@ -29,10 +29,12 @@ public class Escaperoom
     }
     public void CompararRespuesta(string RespuestaUsuario)
     {
+       
         if (RespuestaUsuario == respuestas[nivel])
         {
             nivel++;
         }
+        
     }
     public string DevolverPista()
     {

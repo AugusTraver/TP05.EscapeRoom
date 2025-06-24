@@ -280,8 +280,8 @@ body {
 
 .contexto-img {
     width: 32vw;
-    max-width: 1600px;
-    min-width: 1200px;
+    max-width: 1200px;
+    min-width: 900px;
     margin: 7vh auto 6vh auto;
     border-radius: 1vw;
     box-shadow: 0 4px 24px #1565c055;
@@ -353,8 +353,8 @@ body {
 
 .tutorial-img {
     width: 32vw;
-    max-width: 1600px;
-    min-width: 1200px;
+    max-width: 1200px;
+    min-width: 900px;
     margin: 7vh auto 6vh auto;
     border-radius: 1vw;
     box-shadow: 0 4px 24px #1565c055;
@@ -440,13 +440,13 @@ body {
 }
 .Sala1 {
     background-image: url('/Imagenes/carcel.png');
-    background-size: cover;         /* Hace que la imagen cubra todo el fondo */
-    background-position: center;    /* Centra la imagen */
-    background-repeat: no-repeat;   /* Evita que la imagen se repita */
-    min-height: 100vh;              /* Ocupa al menos toda la altura de la ventana */
-    width: 100vw;                   /* Ocupa todo el ancho de la ventana */
-    margin: 0;                      /* Elimina márgenes */
-    padding: 0;                     /* Elimina padding */   
+    background-size: cover;        
+    background-position: center;   
+    background-repeat: no-repeat; 
+    min-height: 100vh;           
+    width: 100vw;                   
+    margin: 0;                      
+    padding: 0;                       
 }
 .Sala1 .Pista {
   position: absolute;
@@ -467,14 +467,14 @@ body {
 }
 .form-sala1 {
     position: fixed;
-    top: 31.5%;    /* Ajustá este valor según donde lo quieras */
-    right: 29%;  /* Ajustá este valor según donde lo quieras */
+    top: 31.5%;    
+    right: 29%;  
     margin: 0;
     z-index: 10;
 }
 
 .form-sala1 input[type="submit"] {
-  opacity: 00; /* Invisible */
+  opacity: 00; 
     pointer-events: auto;
     width: 80%;
     height: 40px;
