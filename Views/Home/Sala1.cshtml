@@ -1,13 +1,36 @@
 @{
     ViewData["Title"] = "Index";
-    
 }
 
+
+<div id="cronometro" class="cronometro-fijo">
+    Tiempo: <span id="tiempo">00:00</span>
+</div>
+
 <div class="Sala1" style="min-height:100vh;">
-   <form class="form-sala1" action='@Url.Action("DPapel","Home")' method="post">  
+    <form class="form-sala1" action='@Url.Action("DPapel","Home")' method="post">  
         <input type="submit" value="enviar" >
     </form>
+
     <form class="Pista" action='@Url.Action("DevolverPista","Home")' method="post">
-    <button type="submit">Pista</button>
-</form>
+        <button type="submit">Pista</button>
+    </form>
 </div>
+
+<!-- SCRIPT PARA CRONÓMETRO -->
+@section Scripts {
+    <script>
+        const startTime = new Date('@ViewBag.StartTime');
+
+        function actualizarCronometro() {
+            const ahora = new Date();
+            const diferencia = new Date(ahora - startTime);
+            const minutos = String(diferencia.getUTCMinutes()).padStart(2, '0');
+            const segundos = String(diferencia.getUTCSeconds()).padStart(2, '0');
+            document.getElementById('tiempo').innerText = `${minutos}:${segundos}`;
+        }
+
+        setInterval(actualizarCronometro, 1000);
+        actualizarCronometro();
+    </script>
+}

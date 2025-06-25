@@ -21,7 +21,9 @@ public class HomeController : Controller
     {
         Escaperoom EscapeRoom = new Escaperoom(NomUsu);
         HttpContext.Session.SetString("EscapeRoom", Objeto.ObjectToString(EscapeRoom));
+        HttpContext.Session.SetString("StartTime", DateTime.Now.ToString("O"));
         return RedirectToAction("MandarNivel");
+
     }
     public IActionResult DTutorial()
     {
@@ -48,6 +50,11 @@ public class HomeController : Controller
     public IActionResult MandarNivel()
     {
         Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
+            DateTime startTime;
+        if (DateTime.TryParse(HttpContext.Session.GetString("StartTime"), out startTime))
+        {
+        ViewBag.StartTime = startTime.ToString("O"); // Pasamos el tiempo al ViewBag
+        } 
         string Nivel = "Sala1";
         if (EscapeRoom.nivel == 2)
         {

@@ -1,6 +1,12 @@
 @{
     ViewData["Title"] = "Index";
 }
+
+<!-- CRONÓMETRO FIJO -->
+<div id="cronometro" class="cronometro-fijo">
+    ⏱️ Tiempo: <span id="tiempo">00:00</span>
+</div>
+
 <div class="Sala3-video-fondo">
   <iframe
     src="https://www.youtube.com/embed/JJ3KfKRDmyc?autoplay=1&mute=1&controls=0&loop=1&playlist=JJ3KfKRDmyc"
@@ -15,8 +21,27 @@
   <form class="Pista" action='@Url.Action("DevolverPista", "Home")' method="post">
     <button type="submit">Pista</button>
   </form>
-<form action='@Url.Action("CompararRespuesta","Home")' method="post">
+  
+  <form action='@Url.Action("CompararRespuesta", "Home")' method="post">
     <input type="text" name="respuesta" placeholder="Tu respuesta">
     <input type="submit" value="Enviar">
-</form>
+  </form>
 </div>
+
+<!-- SCRIPT PARA CRONÓMETRO -->
+@section Scripts {
+    <script>
+        const startTime = new Date('@ViewBag.StartTime');
+
+        function actualizarCronometro() {
+            const ahora = new Date();
+            const diferencia = new Date(ahora - startTime);
+            const minutos = String(diferencia.getUTCMinutes()).padStart(2, '0');
+            const segundos = String(diferencia.getUTCSeconds()).padStart(2, '0');
+            document.getElementById('tiempo').innerText = `${minutos}:${segundos}`;
+        }
+
+        setInterval(actualizarCronometro, 1000);
+        actualizarCronometro();
+    </script>
+}

@@ -1,15 +1,55 @@
 @{
     ViewData["Title"] = "Index";
 }
-<div class = "Sala4">
+<div class="Sala4">
 
-<div class="Sala4-audio-container">
-  <audio controls>
-    <source src="/imagenes/Lockers.mp3" type="audio/mpeg">
-  </audio>
-</div>
-<form class="form-sala4" action='@Url.Action("DLockers","Home")' method="post">  
-        <input type="submit" value="enviar" >
-    </form>
+  <div id="cronometro" class="cronometro-fijo">
+      ⏱️ Tiempo: <span id="tiempo">00:00</span>
+  </div>
+
+  <div class="Sala4-audio-container">
+    <audio controls>
+      <source src="/imagenes/Lockers.mp3" type="audio/mpeg" />
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+
+  <form class="form-sala4" action='@Url.Action("DLockers", "Home")' method="post">
+      <input type="submit" value="Enviar" />
+  </form>
 
 </div>
+
+@section Scripts {
+  <script>
+    const startTimeString = '@ViewBag.StartTime';
+    if (startTimeString) {
+      const startTime = new Date(startTimeString);
+
+      function actualizarCronometro() {
+        const ahora = new Date();
+        const diffMs = ahora - startTime;
+        if (diffMs < 0) {
+          document.getElementById('tiempo').innerText = '00:00';
+          return;
+        }
+        const totalSeconds = Math.floor(diffMs / 1000);
+        const horas = Math.floor(totalSeconds / 3600);
+        const minutos = Math.floor((totalSeconds % 3600) / 60);
+        const segundos = totalSeconds % 60;
+
+        const tiempoTexto = (horas > 0 ? String(horas).padStart(2, '0') + ':' : '') +
+                           String(minutos).padStart(2, '0') + ':' +
+                           String(segundos).padStart(2, '0');
+
+        document.getElementById('tiempo').innerText = tiempoTexto;
+      }
+
+      setInterval(actualizarCronometro, 1000);
+      actualizarCronometro();
+    } else {
+      document.getElementById('tiempo').innerText = '00:00';
+      console.warn('No se definió ViewBag.StartTime para el cronómetro.');
+    }
+  </script>
+}
