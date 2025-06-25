@@ -1,11 +1,71 @@
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Sala5";
 }
-<div class = "Sala5">
-    <h1>¡Bienvenido a la Sala 5!</h1>
-    <p>En esta sala, debes resolver el acertijo para avanzar.</p>
-      <form class="Pista" action='@Url.Action("DevolverPista", "Home")' method="post">
-    <button type="submit">Pista</button>
-  </form>
 
+<div class="Sala5">
+
+    <!-- CRONÓMETRO -->
+    <div id="cronometro" class="cronometro-fijo">
+        ⏱️ Tiempo: <span id="tiempo">00:00</span>
+    </div>
+
+    <form id="ordenForm" asp-action="CompararRespuesta" asp-controller="Home" method="post">
+        <input type="hidden" id="respuesta" name="respuesta" />
+
+        <button type="button" class="boton-sala5" id="boton1" onclick="agregarValor(1)">1</button>
+        <button type="button" class="boton-sala5" id="boton2" onclick="agregarValor(2)">2</button>
+        <button type="button" class="boton-sala5" id="boton3" onclick="agregarValor(3)">3</button>
+        <button type="button" class="boton-sala5" id="boton4" onclick="agregarValor(4)">4</button>
+
+        <button type="submit" class="enviar-sala5">Enviar Respuesta</button>
+    </form>
+
+    <form class="Pista" action='@Url.Action("DevolverPista", "Home")' method="post">
+        <button type="submit">Pista</button>
+    </form>
 </div>
+
+<script>
+    let orden = [];
+
+    function agregarValor(valor) {
+        if (orden.length < 4 && !orden.includes(valor)) {
+            orden.push(valor);
+            document.getElementById("respuesta").value = orden.join("");
+        }
+    }
+</script>
+
+@section Scripts {
+    <script>
+        const startTimeString = '@ViewBag.StartTime';
+        if (startTimeString) {
+            const startTime = new Date(startTimeString);
+
+            function actualizarCronometro() {
+                const ahora = new Date();
+                const diffMs = ahora - startTime;
+                if (diffMs < 0) {
+                    document.getElementById('tiempo').innerText = '00:00';
+                    return;
+                }
+                const totalSeconds = Math.floor(diffMs / 1000);
+                const horas = Math.floor(totalSeconds / 3600);
+                const minutos = Math.floor((totalSeconds % 3600) / 60);
+                const segundos = totalSeconds % 60;
+
+                const tiempoTexto = (horas > 0 ? String(horas).padStart(2, '0') + ':' : '') +
+                    String(minutos).padStart(2, '0') + ':' +
+                    String(segundos).padStart(2, '0');
+
+                document.getElementById('tiempo').innerText = tiempoTexto;
+            }
+
+            setInterval(actualizarCronometro, 1000);
+            actualizarCronometro();
+        } else {
+            document.getElementById('tiempo').innerText = '00:00';
+            console.warn('No se definió ViewBag.StartTime para el cronómetro.');
+        }
+    </script>
+}

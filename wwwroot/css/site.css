@@ -830,3 +830,70 @@ body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   user-select: none; 
 }
+.Sala5 {
+  background-image: url('/Imagenes/Sala5.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+
+.boton-sala5 {
+  position: absolute;
+  padding: 37px 42px;
+  font-size: 1.3rem;
+  background: #ffffffcc;
+  color: #0d47a1;
+  border: 2px solid #0d47a1;
+  border-radius: 100px;
+  font-weight: bold;
+  cursor: pointer;
+opacity: 0;
+}
+.enviar-sala5 {
+  position: absolute;
+  padding: 37px 42px;
+  font-size: 1.3rem;
+  background: #1e1e1ecc;            
+  color: #ffe082;                  
+  border: 2px solid #444;           
+  border-radius: 100px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);  
+  transition: 0.3s ease;
+}
+
+.enviar-sala5:hover {
+  background: #2c2c2c;              
+  color: #ffffff;
+  border-color: #ffe082;            
+  box-shadow: 0 0 14px #ffe08266;   
+}
+#boton1 { top: 47%; left: 33.3%; }
+#boton2 { top: 64%; left: 24%; }
+#boton3 { top: 47%; left: 24%; }
+#boton4 { top: 64%; left: 33.3%; }
+.enviar-sala5 { top: 80%; left: 40%; }
+
+.Sala5 .Pista {
+  position: absolute;
+  top: 32px;
+  right: 48px;
+  z-index: 2;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 14px 6px rgba(0,0,0,0.13);
+}
+.Sala5 .Pista:hover {
+  background: #868686;
+  color: #000000;
+}

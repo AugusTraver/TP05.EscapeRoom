@@ -20,12 +20,12 @@ public class Escaperoom
         pistas.Add(2, "Mira el nombre del barco");
         pistas.Add(3, "El video esta en loop, no toques para asi no pausarlo, apagado vale 0, titleo 1 y prendido 2, pone el codigo y pasa a la siguiente sala, termina cuando esta apagada");
         pistas.Add(4, "Agua....");
-        pistas.Add(5, "Para sacar la calle mira la carta y para sacar el numero mira el plano, pon la direccion para pasar");
+        pistas.Add(5, " Toca los botones en el orden correcto para pasar");
         respuestas.Add(1, "ORIGAMI");
         respuestas.Add(2, "CHRISTINAROSE");
         respuestas.Add(3, "21210");
         respuestas.Add(4, "AGUATEMPLADA");
-        respuestas.Add(5, "FOX RIVER ROAD 42");
+        respuestas.Add(5, "1234");
     }
     public void CompararRespuesta(string RespuestaUsuario)
     {

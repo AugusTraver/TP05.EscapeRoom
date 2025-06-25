@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="MostrarResultado">
+    <header>
+        La banda del Morgan
+        <nav>
+            <a href='@Url.Action("Index","Home")'>Volver al inicio</a>
+        </nav>
+    </header>
+
+    <p>🎉 ¡Felicitaciones @ViewBag.Nombre, ganaste! 🎉</p>
+    <p>⏱️ Tiempo total: <strong>@ViewBag.TiempoFinal</strong></p>
+
+    <footer>
+        &copy; @DateTime.Now.Year - La banda del Morgan
+    </footer>
+</div>
