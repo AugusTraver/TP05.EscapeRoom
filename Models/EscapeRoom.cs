@@ -25,7 +25,7 @@ public class Escaperoom
         respuestas = new Dictionary<int, string>();
         pistas.Add(1, "Fijate en la grulla");
         pistas.Add(2, "Mira el nombre del barco");
-        pistas.Add(3, "El video esta en loop, no toques para asi no pausarlo, apagado vale 0, titleo 1 y prendido 2, pone el codigo y pasa a la siguiente sala, termina cuando esta apagada y tiene 5 digitos");
+        pistas.Add(3, "El video esta en loop, no toques para asi no pausarlo, apagado vale 0, titileo 1 y prendido 2, pone el codigo y pasa a la siguiente sala, termina cuando esta apagada y tiene 5 digitos");
         pistas.Add(4, "Agua....");
         pistas.Add(5, " Toca los botones en el orden correcto para pasar");
         respuestas.Add(1, "ORIGAMI");

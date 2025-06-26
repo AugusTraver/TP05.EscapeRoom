@@ -855,16 +855,16 @@ body {
 opacity: 0;
 }
 .enviar-sala5 {
-  position: absolute;
+  position: absolute; 
   padding: 37px 42px;
   font-size: 1.3rem;
-  background: #1e1e1ecc;            
-  color: #ffe082;                  
-  border: 2px solid #444;           
+  background: #1e1e1ecc;
+  color: #ffe082;
+  border: 2px solid #444;
   border-radius: 100px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);  
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
   transition: 0.3s ease;
 }
 
