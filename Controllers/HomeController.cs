@@ -53,7 +53,7 @@ public class HomeController : Controller
         DateTime startTime;
         if (DateTime.TryParse(HttpContext.Session.GetString("StartTime"), out startTime))
         {
-            ViewBag.StartTime = startTime.ToString("O"); // Pasamos el tiempo al ViewBag
+            ViewBag.StartTime = startTime.ToString("O");
         }
         string Nivel = "Sala1";
         if (EscapeRoom.nivel == 2)

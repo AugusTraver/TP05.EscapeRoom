@@ -897,3 +897,78 @@ opacity: 0;
   background: #868686;
   color: #000000;
 }
+.MostrarResultado {
+  min-height: 100vh;
+  background: #1976d2;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.MostrarResultado header {
+  text-align: center;
+  color: #fff;
+  margin-top: 2vh;
+  font-size: 2.2vw;
+  letter-spacing: 0.12vw;
+  font-weight: bold;
+}
+
+.MostrarResultado nav {
+  margin-top: 1vh;
+  text-align: center;
+}
+
+.MostrarResultado nav a {
+  color: #fff;
+  font-size: 1.2vw;
+  text-decoration: none;
+  background: #0d47a1;
+  padding: 0.5vw 1.5vw;
+  border-radius: 0.4vw;
+  box-shadow: 0 2px 8px #1565c033;
+  transition: 0.3s ease;
+}
+
+.MostrarResultado nav a:hover {
+  background: #fff;
+  color: #0d47a1;
+}
+
+.MostrarResultado p {
+  text-align: center;
+  font-size: 1.8vw;
+  margin-top: 5vh;
+  color: #fff;
+  text-shadow: 0 1px 4px #0d47a155;
+}
+
+.MostrarResultado p strong {
+  color: #ffe082;
+  font-weight: bold;
+  font-size: 2vw;
+}
+.MostrarResultado img {
+  width: 25vw;
+  max-width: 2800px;
+  margin: 4vh auto 2vh auto;
+  display: block;
+  border-radius: 1vw;
+  box-shadow: 0 4px 16px #0d47a188;
+  border: 3px solid #fff;
+  background: #fff;
+}
+.MostrarResultado footer {
+  margin-top: auto;
+  width: 100%;
+  padding: 2vw 0;
+  background: #0d47a1;
+  border-top: 3px solid #fff;
+  text-align: center;
+  color: #ffe082;
+  font-size: 1.2vw;
+  letter-spacing: 0.3vw;
+  border-radius: 0 0 1vw 1vw;
+  box-shadow: 0 -2px 16px #0d47a188;
+  font-weight: bold;
+}
