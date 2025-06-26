@@ -12,7 +12,7 @@ public static class Ranking
     public static Dictionary<string, TimeSpan> ObtenerRankingOrdenadoDic()
     {
         return DicRanking
-         .OrderByDescending(pair => pair.Value)
+         .OrderBy(pair => pair.Value)
          .ToDictionary(pair => pair.Key, pair => pair.Value);
     }
 }

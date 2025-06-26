@@ -11,8 +11,10 @@ public class Escaperoom
     public Dictionary<int, string> respuestas { private set; get; }
     [JsonProperty]
     public string NomUsu { private set; get; }
-
+    [JsonProperty]
     public DateTime TiempoInicio { private set; get; }
+        
+        [JsonProperty]
     public DateTime TiempoFinalizo { private set; get; }
     public Escaperoom(string PNomUsu, DateTime Hora)
     {
