@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Index";
+    var ranking = ViewBag.Ranking as Dictionary<string, TimeSpan>;
+    var rankingList = ranking?.ToList(); // Convertimos a lista para usar índice
+}
+
+<div class="Ranking">
+    <h2>ESTE ES EL RANKING</h2>
+
+    @if (rankingList != null && rankingList.Count > 0)
+    {
+        <ol>
+            @for (int i = 0; i < rankingList.Count; i++)
+            {
+                <li>@rankingList[i].Value - @rankingList[i].Key</li>
+            }
+        </ol>
+    }
+    else
+    {
+        <p>No hay datos en el ranking.</p>
+    }
+</div>

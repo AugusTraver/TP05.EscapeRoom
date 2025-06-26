@@ -10,8 +10,12 @@ public class Escaperoom
     [JsonProperty]
     public Dictionary<int, string> respuestas { private set; get; }
     public string NomUsu { private set; get; }
-    public Escaperoom(string PNomUsu)
+    
+    public DateTime TiempoInicio {private set; get;}
+    public DateTime TiempoFinalizo {private set; get;}
+    public Escaperoom(string PNomUsu, DateTime TiempoUsu)
     {
+        TiempoInicio = TiempoUsu;
         NomUsu = PNomUsu;
         nivel = 1;
         pistas = new Dictionary<int, string>();
@@ -34,6 +38,12 @@ public class Escaperoom
         {
             nivel++;
         }
+
+       if(nivel == 6){
+    TiempoFinalizo = DateTime.Now;
+    TimeSpan tiempoTranscurrido = TiempoFinalizo - TiempoInicio;
+    Ranking.AgregarUsuario(NomUsu, tiempoTranscurrido);
+}
         
     }
     public string DevolverPista()
