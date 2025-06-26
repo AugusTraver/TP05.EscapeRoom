@@ -1,23 +1,31 @@
 @{
     ViewData["Title"] = "Index";
-    var ranking = ViewBag.Ranking as Dictionary<string, TimeSpan>;
-    var rankingList = ranking?.ToList(); // Convertimos a lista para usar índice
+    
 }
 
 <div class="Ranking">
-
-    @if (rankingList != null && rankingList.Count > 0)
+<form action='@Url.Action("MostrarResultado", "Home")' method="post">
+        <input type="submit" value="Volver a los resultados" />
+    </form>    @if (ViewBag.Ranking != null)
     {
+        if (ViewBag.Ranking.Count >0)
+        {
             <h2>ESTE ES EL RANKING</h2>
-        <ol>
-            @for (int i = 0; i < rankingList.Count; i++)
-            {
-                <li>@rankingList[i].Value - @rankingList[i].Key</li>
-            }
-        </ol>
+            <ol>
+                @foreach (string clave in ViewBag.Ranking.Keys)
+                {
+                    <li>@clave - @ViewBag.Ranking[clave]</li>
+                }
+            </ol>
+        }
+        else
+        {
+            <p>No hay datos en el ranking.</p>
+        }
     }
     else
     {
         <p>No hay datos en el ranking.</p>
     }
+    
 </div>

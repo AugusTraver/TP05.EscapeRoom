@@ -41,7 +41,6 @@
         {
             if (string.IsNullOrWhiteSpace(respuesta))
                 return RedirectToAction("MandarNivel");
-
             Escaperoom EscapeRoom = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
             EscapeRoom.CompararRespuesta(respuesta.ToUpper().Replace(" ", ""));
             HttpContext.Session.SetString("EscapeRoom", Objeto.ObjectToString(EscapeRoom));
@@ -110,16 +109,22 @@
             tiempoFinal = (horas > 0 ? $"{horas:D2}:" : "") +
                         $"{minutos:D2}:{segundos:D2}";
         }
-
         Escaperoom escape = Objeto.StringToObject<Escaperoom>(HttpContext.Session.GetString("EscapeRoom"));
         ViewBag.TiempoFinal = tiempoFinal;
         ViewBag.Nombre = escape.NomUsu;
         return View(MostrarResultado);
     }
-    public IActionResult DRanking()
-    {
-        ViewBag.Ranking = Ranking.ObtenerRankingOrdenadoDic();
-        return View("Ranking");
-    }
+public IActionResult DRanking()
+{
+    var rankingOriginal = Ranking.ObtenerRankingOrdenadoDic();
+
+    var rankingFormateado = rankingOriginal
+        .ToDictionary(
+            par => par.Key,
+            par => par.Value.ToString(@"hh\:mm\:ss")
+        );
+    ViewBag.Ranking = rankingFormateado;
+    return View("Ranking");
+}
     }
 

@@ -5,16 +5,19 @@
     <header>
         La banda del Morgan
         <nav>
-            <a href='@Url.Action("Index","Home")'>Volver al inicio</a>
+            <a href='@Url.Action("Index", "Home")'>Volver al inicio</a>
         </nav>
     </header>
-     
+
     <p>🎉 ¡Felicitaciones @ViewBag.Nombre, ganaste! 🎉</p>
     <p>⏱️ Tiempo total: <strong>@ViewBag.TiempoFinal</strong></p>
-    <img src  = "/Imagenes/MostarResultado.webp" alt = "Foto Michael Scofield">
-      <form class="Ranking" action='@Url.Action("DRanking","Home")' method="post">
+
+    <img src="/Imagenes/MostarResultado.webp" alt="Foto Michael Scofield" />
+
+    <form class="Ranking1" action='@Url.Action("DRanking", "Home")' method="post">
         <button type="submit">Ir al ranking</button>
     </form>
+
     <footer>
         &copy; @DateTime.Now.Year - La banda del Morgan
     </footer>
