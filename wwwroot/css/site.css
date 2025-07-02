@@ -819,16 +819,26 @@ body {
 }
 .cronometro-fijo {
   position: fixed;
-  bottom: 20px;
-  right: 88%;
-  font-size: 1.4rem;
-  color: white;
-  background-color: rgba(39, 38, 38, 0.5); 
-  padding: 8px 12px;
-  border-radius: 8px;
+  top: 90%;
+  right: 84%;
+  font-size: 1.5rem;
+  color: #ffe082;
+  background: rgba(66, 68, 70, 0.85);
+  padding: 12px 28px;
+  border-radius: 32px;
+  box-shadow: 0 4px 18px #0d47a155;
   z-index: 9999;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  user-select: none; 
+  font-family: 'Segoe UI', Arial, sans-serif;
+  user-select: none;
+  letter-spacing: 0.08em;
+  border: 2px solid #fff;
+  text-shadow: 0 2px 8px #eaebeccc;
+  transition: background 0.3s;
+}
+.cronometro-fijo:hover {
+  background: rgba(245, 255, 109, 0.95);
+  text-shadow: 0 2px 8px #00000088;
+  color:black;
 }
 .Sala5 {
   background-image: url('/Imagenes/Sala5.webp');
