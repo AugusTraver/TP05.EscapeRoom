@@ -3,7 +3,7 @@
 }
 <div class = "Lockers">
 <form action='@Url.Action("CompararRespuesta","Home")' method="post">
-    <input type="text" name="respuesta" placeholder="Tu respuesta">
+    <input type="text" name="respuesta" placeholder="Tu respuesta" autocomplete="off">
     <input type="submit" value="Enviar">
 </form>
    <form class="Pista" action='@Url.Action("DevolverPista","Home")' method="post">
